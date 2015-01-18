@@ -450,7 +450,7 @@ TagField = function (_fieldRootId, _hiddenAppliedIdsDiv, _appliedDisplayNameDiv,
 
             checkUserInputString(userInputString);
             if (userInputString.length >= charactersBeforeSuggestions) {
-                getTagSuggestions(userInputString);
+                getTagSuggestions(userInputString + "*");
             }
         }
     });
