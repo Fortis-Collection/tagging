@@ -2,18 +2,20 @@
 <div id="<%=ID%>_TagField">
 	<input id="<%= ID %>_Value" type="hidden" class="tagHiddenInputBox" value="<%= Value %>">
 	<div>
-		<p>Enter a tag</p>
+		<p>Search</p>
 		<div class="inputWrap">
 			<input id="<%= ID %>_TagEntry" class="tagInputBox" />
-			<div class="addtagbtn">Add Tag</div>
+			<div class="addTagButton">Add</div>
 			<div class="messageTextBox"></div>
 			<div class="tagSuggestionBox_wrap">
-			<span class="closebtn"></span>
-			<div class="tagSuggestionBox" ></div></div>
+				<span class="closebtn"></span>
+				<div class="tagSuggestionBox"></div>
+			</div>
 		</div>
 	</div>
-	<div>
-		<p>Added Tags</p>
+	<hr />
+	<div class="selectedTags">
+		<p>Selected</p>
 		<div id="<%= ID %>_Selected" class="tagsAdded">
 				<% foreach (var selectedValue in SelectedValues) { %>
 				<span data-id="<%= selectedValue.Key %>" class="addedTagItem"><span class="displayText"><%= selectedValue.Value %></span><a href="#" class="addedTagItemCloseBtn"></a></span>
@@ -26,7 +28,7 @@
 		var $taggingField = jQuery.noConflict();
 
 		$taggingField(document).ready(function () {
-			var taggingFunctionality<%=ID%> = new TagField("#<%=ID%>_TagField", ".tagHiddenInputBox", ".tagsAdded", ".addtagbtn", ".tagInputBox", ".tagSuggestionBox", "<%= Filter %>", ".messageTextBox");
+			var taggingFunctionality<%=ID%> = new TagField("#<%=ID%>_TagField", ".tagHiddenInputBox", ".tagsAdded", ".addTagButton", ".tagInputBox", ".tagSuggestionBox", "<%= Filter %>", ".messageTextBox");
 		});
 	</script>
 </div>
